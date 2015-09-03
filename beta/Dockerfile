@@ -11,8 +11,13 @@ RUN apt-get update && \
 WORKDIR /var/www/html
 
 COPY freshrss /var/www/html
+COPY freshrss/data /data
+COPY run.sh /run.sh
 
 RUN chown -R :www-data /var/www/html
 RUN chmod -R g+w /var/www/html/data
+RUN chmod +x /run.sh
 
 VOLUME ["/var/www/html/data"]
+
+CMD ["/run.sh"]
