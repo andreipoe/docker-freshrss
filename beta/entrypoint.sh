@@ -3,6 +3,7 @@ set -e
 
 FRSS_TIMEZONE="${FRSS_TIMEZONE:-Europe/Paris}"
 FRSS_REFRESH="${FRSS_REFRESH:-3600}"
+FRSS_HTTPS="${FRSS_HTTPS:-off}"
 
 appInit() {
     # create log dir
@@ -10,6 +11,9 @@ appInit() {
 
     # set timezone
     echo -e "[php]\ndate.timezone=${FRSS_TIMEZONE}\n" > /usr/local/etc/php/php.ini
+
+    # set HTTPS for Apache (for reverse proxy)
+    echo "SetEnv HTTPS ${FRSS_HTTPS}" >> ${FRSS_HOME}/.htaccess
 
     # look for empty dir
     [[ "$(ls -A ${FRSS_DATA_DIR})" ]] || {
