@@ -1,4 +1,3 @@
-[submodule "beta/freshrss"]
-	path = beta/freshrss
-	url = git@github.com:FreshRSS/FreshRSS.git
-	branch = beta
+[submodule "master/freshrss"]
+	path = master/freshrss
+	url = https://github.com/FreshRSS/FreshRSS
