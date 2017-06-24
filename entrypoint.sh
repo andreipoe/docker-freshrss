@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-FRSS_TIMEZONE="${FRSS_TIMEZONE:-Europe/Paris}"
-FRSS_REFRESH="${FRSS_REFRESH:-3600}"
+FRSS_TIMEZONE="${FRSS_TIMEZONE:-Europe/London}"
+FRSS_REFRESH="${FRSS_REFRESH:-1800}"
 FRSS_HTTPS="${FRSS_HTTPS:-off}"
 
 appInit() {
