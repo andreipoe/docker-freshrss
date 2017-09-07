@@ -9,7 +9,7 @@ ENV FRSS_HOME="/srv/FreshRSS" \
 ENV FRSS_DATA_DIR="${FRSS_HOME}/data"
 
 # Leave blank for the lastest stable verion
-ENV FRSS_VERSION=""
+ARG FRSS_VERSION
 
 RUN apt-get update \
     && apt-get install -y libcurl4-openssl-dev libjpeg62-turbo-dev \

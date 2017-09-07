@@ -19,7 +19,7 @@ Alternatively, you can clone the GitHub repository and build the image locally:
     
 The top part of the Dockerfile contains a number of environment variables that you can set using the `-e` argument to `docker build`. The most useful one is `FRSS_VERSION`, which controls the version of FreshRSS used. For example, to run the latest development version of FreshRSS:
 
-    $ docker build -t freshrss:dev -e FRSS_VERSION=dev
+    $ docker build -t freshrss:dev --build-arg FRSS_VERSION=dev .
     
 The remaining environment options only control the placement of files inside the container and should not need to be changed under normal usage.
 
